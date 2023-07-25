@@ -2,7 +2,7 @@ import Header from "../components/Header.tsx";
 import { useEffect, useState } from "preact/hooks";
 
 export default function Theme() {
-  const [mode, setMode] = useState(localStorage.theme || "");
+  const [mode, setMode] = useState("");
   const toggleMode = (theme: "dark" | "light") => {
     setMode(theme);
     if (theme === "dark") {
