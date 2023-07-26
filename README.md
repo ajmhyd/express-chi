@@ -1,9 +1,14 @@
-# Fresh project
+# Express Chi
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
+View the status of the Chicago Kennedy express lanes
+[expresschi.com](expresschi.com)
 
-### Usage
+<p align="center">
+  <img src="static/expresschimobile.png" alt="Express Chi mobile"/>
+  <img src="static/expresschi.png" alt="Express Chi web"/>
+</p>
+
+## Usage
 
 Make sure to install Deno: https://deno.land/manual/getting_started/installation
 
@@ -14,3 +19,26 @@ deno task start
 ```
 
 This will watch the project directory and restart as necessary.
+
+## Built With
+
+- [Deno](https://deno.land) - The easiest, most secure JavaScript runtime.
+- [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for
+  types.
+- [Fresh](https://fresh.deno.dev) - The next-get web framework.
+- [Tailwind CSS](https://chakra-ui.com/) - A simple, modular and accessible
+  component library.
+- [Twind](https://twind.dev) - The smallest, fastest, most feature complete
+  tailwind-in-js solution in existence.
+- [Deno Deploy](https://deno.com/deploy) - Serverless JavaScript hosting with
+  zero config, worldwide.
+- [IDOT](https://idot.illinois.gov/) - Gateway traffic information courtesy of
+  the Illinois Department of Transportation
+
+## Authors
+
+Alex Matseshe
+
+## License
+
+[MIT](LICENSE)
