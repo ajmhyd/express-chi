@@ -17,6 +17,7 @@ export default function App({ Component }: AppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href={asset("/favicon.ico")} />
+        <link rel="stylesheet" href="/styles.css" />
         <script dangerouslySetInnerHTML={{ __html: code }}></script>
       </Head>
       <Component />
