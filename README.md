@@ -28,8 +28,6 @@ This will watch the project directory and restart as necessary.
 - [Fresh](https://fresh.deno.dev) - The next-get web framework.
 - [Tailwind CSS](https://chakra-ui.com/) - A simple, modular and accessible
   component library.
-- [Twind](https://twind.dev) - The smallest, fastest, most feature complete
-  tailwind-in-js solution in existence.
 - [Deno Deploy](https://deno.com/deploy) - Serverless JavaScript hosting with
   zero config, worldwide.
 - [IDOT](https://idot.illinois.gov/) - Gateway traffic information courtesy of
