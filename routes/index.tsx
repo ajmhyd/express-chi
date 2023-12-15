@@ -1,9 +1,9 @@
-import Header from "../islands/Theme.tsx";
 import { DOMParser } from "https://esm.sh/linkedom";
-import { getTextContent, getUpdatedAt } from "../utils/queries.tsx";
-import TravelTimeDifference from "../components/TravelTimeDifference.tsx";
 import Congestion from "../components/Congestion.tsx";
 import Footer from "../components/Footer.tsx";
+import TravelTimeDifference from "../components/TravelTimeDifference.tsx";
+import Header from "../islands/Theme.tsx";
+import { getTextContent, getUpdatedAt } from "../utils/queries.tsx";
 
 const URL =
   "https://www.travelmidwest.com/lmiga/traveltimes.jsp?location=GATEWAY.IL.KENNEDY";
