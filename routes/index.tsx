@@ -124,6 +124,11 @@ export default async function Home() {
                 </div>
               </dl>
             )}
+          <div class="mt-4">
+            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white mb-6">
+              *Due to recent construction it is possible for direction to be inaccurate. Please click <a class="font-extrabold" href="https://www.travelmidwest.com/lmiga/cameraReport.jsp?location=GATEWAY.IL.KENNEDY">HERE</a> to view live cameras and confirm direction.
+            </h3>
+          </div>
         </main>
         <Footer />
       </div>
