@@ -92,11 +92,13 @@ export default async function Home() {
 							Express lanes
 						</p>
 					</div>
-					{direction === 'Unknown' ? (
-						<h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-							<span className="block xl:inline">Status:</span>
+					{[Direction.UNKNOWN, Direction.CLOSED].includes(
+						direction,
+					) ? (
+						<h1 className="text-4xl mt-4 text-center tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+							<span className="block xl:inline">Status: </span>
 							<span className="block text-blue-300 xl:inline">
-								Unknown
+								{direction}
 							</span>
 						</h1>
 					) : (
