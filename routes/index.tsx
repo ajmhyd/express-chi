@@ -50,11 +50,11 @@ export default async function Home() {
 		?.find(row => row.tablePath === PATH_OUTBOUND)
 		?.reportRows.find(row => row.id === ID_OUTBOUND);
 
-	let direction: Direction = Direction.UNKNOWN;
+	let direction: Direction = Direction.Unknown;
 	let travelTime: number | null = null;
 	let averageTravelTime: number | null = null;
 	let speed: number | null = null;
-	let level: TrafficLevel = TrafficLevel.UNKNOWN;
+	let level: TrafficLevel = TrafficLevel.Unknown;
 
 	const isInbound = inboundData?.level !== 'Unknown';
 	const isOutbound = outboundData?.level !== 'Unknown';
@@ -62,11 +62,11 @@ export default async function Home() {
 	if (isInbound && isOutbound) {
 		// Unreliable data, cannot be both inbound and outbound simultaneously
 	} else if (!isInbound && !isOutbound) {
-		direction = Direction.CLOSED;
+		direction = Direction.Closed;
 	} else {
 		const data = isInbound ? inboundData : outboundData;
 		if (data) {
-			direction = isInbound ? Direction.INBOUND : Direction.OUTBOUND;
+			direction = isInbound ? Direction.Inbound : Direction.Outbound;
 			travelTime = data.tt === -1 ? null : Math.round(data.tt);
 			averageTravelTime = data.avg === -1 ? null : Math.round(data.avg);
 			speed =
@@ -92,7 +92,7 @@ export default async function Home() {
 							Express lanes
 						</p>
 					</div>
-					{[Direction.UNKNOWN, Direction.CLOSED].includes(
+					{[Direction.Unknown, Direction.Closed].includes(
 						direction,
 					) ? (
 						<h1 className="text-4xl mt-4 text-center tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">

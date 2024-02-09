@@ -1,14 +1,14 @@
-export enum TrafficLevel {
-	UNCONGESTED = 'Uncongested',
-	LIGHT = 'Light',
-	MEDIUM = 'Medium',
-	HEAVY = 'Heavy',
-	UNKNOWN = 'Unknown',
+export const enum TrafficLevel {
+	Uncongested = 'Uncongested',
+	Light = 'Light',
+	Medium = 'Medium',
+	Heavy = 'Heavy',
+	Unknown = 'Unknown',
 }
 
-export enum Direction {
-	UNKNOWN = 'Unknown',
-	INBOUND = 'Inbound',
-	OUTBOUND = 'Outbound',
-	CLOSED = 'Closed',
+export const enum Direction {
+	Unknown = 'Unknown',
+	Inbound = 'Inbound',
+	Outbound = 'Outbound',
+	Closed = 'Closed',
 }

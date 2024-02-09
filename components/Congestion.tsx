@@ -5,19 +5,19 @@ type CongestionProps = {
 };
 
 const CONGESTION_TO_LABEL: Record<TrafficLevel, string> = {
-	[TrafficLevel.UNCONGESTED]: 'Uncongested',
-	[TrafficLevel.LIGHT]: 'Light Congestion',
-	[TrafficLevel.MEDIUM]: 'Medium Congestion',
-	[TrafficLevel.HEAVY]: 'Heavy Congestion',
-	[TrafficLevel.UNKNOWN]: 'Unknown Congestion',
+	[TrafficLevel.Uncongested]: 'Uncongested',
+	[TrafficLevel.Light]: 'Light Congestion',
+	[TrafficLevel.Medium]: 'Medium Congestion',
+	[TrafficLevel.Heavy]: 'Heavy Congestion',
+	[TrafficLevel.Unknown]: 'Unknown Congestion',
 };
 
 const CONGESTION_TO_CLASS: Record<TrafficLevel, string> = {
-	[TrafficLevel.UNCONGESTED]: 'bg-blue-100 text-blue-800',
-	[TrafficLevel.LIGHT]: 'bg-green-100 text-green-800',
-	[TrafficLevel.MEDIUM]: 'bg-yellow-100 text-yellow-800',
-	[TrafficLevel.HEAVY]: 'bg-red-100 text-red-800',
-	[TrafficLevel.UNKNOWN]: 'bg-gray-100 text-gray-800',
+	[TrafficLevel.Uncongested]: 'bg-blue-100 text-blue-800',
+	[TrafficLevel.Light]: 'bg-green-100 text-green-800',
+	[TrafficLevel.Medium]: 'bg-yellow-100 text-yellow-800',
+	[TrafficLevel.Heavy]: 'bg-red-100 text-red-800',
+	[TrafficLevel.Unknown]: 'bg-gray-100 text-gray-800',
 };
 
 const Congestion = ({level}: CongestionProps) => {
