@@ -1,38 +1,31 @@
+import {TrafficLevel} from '../types.ts';
+
 type CongestionProps = {
-  speed: number;
+	level: TrafficLevel;
 };
-const Congestion = ({ speed }: CongestionProps) => {
-  if (speed > 45) {
-    return (
-      <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 md:mt-2 lg:mt-0">
-        Uncongested
-      </div>
-    );
-  } else if (speed <= 45 && speed > 30) {
-    return (
-      <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
-        Light Congestion
-      </div>
-    );
-  } else if (speed <= 30 && speed > 12) {
-    return (
-      <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 md:mt-2 lg:mt-0">
-        Medium Congestion
-      </div>
-    );
-  } else if (speed <= 12) {
-    return (
-      <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
-        Heavy Congestion
-      </div>
-    );
-  } else {
-    return (
-      <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800 md:mt-2 lg:mt-0">
-        Unknown Congestion
-      </div>
-    );
-  }
+
+const CONGESTION_TO_LABEL: Record<TrafficLevel, string> = {
+	[TrafficLevel.UNCONGESTED]: 'Uncongested',
+	[TrafficLevel.LIGHT]: 'Light Congestion',
+	[TrafficLevel.MEDIUM]: 'Medium Congestion',
+	[TrafficLevel.HEAVY]: 'Heavy Congestion',
+	[TrafficLevel.UNKNOWN]: 'Unknown Congestion',
+};
+
+const CONGESTION_TO_CLASS: Record<TrafficLevel, string> = {
+	[TrafficLevel.UNCONGESTED]: 'bg-blue-100 text-blue-800',
+	[TrafficLevel.LIGHT]: 'bg-green-100 text-green-800',
+	[TrafficLevel.MEDIUM]: 'bg-yellow-100 text-yellow-800',
+	[TrafficLevel.HEAVY]: 'bg-red-100 text-red-800',
+	[TrafficLevel.UNKNOWN]: 'bg-gray-100 text-gray-800',
+};
+
+const Congestion = ({level}: CongestionProps) => {
+	const label = CONGESTION_TO_LABEL[level];
+	const className = CONGESTION_TO_CLASS[level];
+	const finalClass = `inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium md:mt-2 lg:mt-0 ${className}`;
+
+	return <div className={finalClass}>{label}</div>;
 };
 
 export default Congestion;
