@@ -35,7 +35,11 @@ This will watch the project directory and restart as necessary.
 
 ## Authors
 
-Alex Matseshe
+- [Alex Matseshe](https://github.com/ajmhyd)
+
+## Contributors
+
+- [Albert Portnoy](https://github.com/asportnoy)
 
 ## License
 
