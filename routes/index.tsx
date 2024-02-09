@@ -62,11 +62,10 @@ export default async function Home() {
 	if (isInbound && isOutbound) {
 		// Unreliable data, cannot be both inbound and outbound simultaneously
 	} else if (!isInbound && !isOutbound) {
-		direction = Direction.UNKNOWN;
+		direction = Direction.CLOSED;
 	} else {
 		const data = isInbound ? inboundData : outboundData;
 		if (data) {
-			console.log(data);
 			direction = isInbound ? Direction.INBOUND : Direction.OUTBOUND;
 			travelTime = data.tt === -1 ? null : Math.round(data.tt);
 			averageTravelTime = data.avg === -1 ? null : Math.round(data.avg);
