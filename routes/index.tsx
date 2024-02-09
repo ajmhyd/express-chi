@@ -56,11 +56,14 @@ export default async function Home() {
 	let speed: number | null = null;
 	let level: TrafficLevel = TrafficLevel.Unknown;
 
-	const isInbound = inboundData?.level !== 'Unknown';
-	const isOutbound = outboundData?.level !== 'Unknown';
+	const isInbound = inboundData && inboundData?.level !== 'Unknown';
+	const isOutbound = outboundData && outboundData?.level !== 'Unknown';
+	// If we are missing some data or are both inbound and outbound simultaneously, the data should be considered unreliable
+	const isUnreliable =
+		!inboundData || !outboundData || (isInbound && isOutbound);
 
-	if (isInbound && isOutbound) {
-		// Unreliable data, cannot be both inbound and outbound simultaneously
+	if (isUnreliable) {
+		direction = Direction.Unknown;
 	} else if (!isInbound && !isOutbound) {
 		direction = Direction.Closed;
 	} else {
