@@ -10,6 +10,7 @@ const PATH_INBOUND = `${PATH_BASE} EB`;
 const ID_INBOUND = `IL-TESTTSC-249`;
 const PATH_OUTBOUND = `${PATH_BASE} WB`;
 const ID_OUTBOUND = `IL-TESTTSC-250`;
+const TIMEOUT_MS = 1_000;
 
 interface ReportRow {
 	avg: number;
@@ -31,10 +32,17 @@ type APIResponse = Array<{
 }>;
 
 const fetchApi = async (): Promise<APIResponse | null> => {
+	const controller = new AbortController();
+	const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
 	try {
-		const response = await fetch(URL);
+		const response = await fetch(URL, {
+			signal: controller.signal,
+		});
+		clearTimeout(timeout);
+		if (!response.ok) return null;
 		return response.json();
 	} catch (error) {
+		clearTimeout(timeout);
 		console.error(error);
 		return null;
 	}
