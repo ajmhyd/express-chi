@@ -1,7 +1,7 @@
 # Express Chi
 
 View the status of the Chicago Kennedy express lanes
-[expresschi.com](expresschi.com)
+[expresschi.com](https://expresschi.com)
 
 <p align="center">
   <img src="static/expresschimobile.png" alt="Express Chi mobile"/>
