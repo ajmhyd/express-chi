@@ -10,7 +10,7 @@ View the status of the Chicago Kennedy express lanes
 
 ## Usage
 
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
+Make sure to install Deno: <https://deno.land/manual/getting_started/installation>
 
 Then start the project:
 
@@ -26,6 +26,7 @@ This will watch the project directory and restart as necessary.
 - [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for
   types.
 - [Fresh](https://fresh.deno.dev) - The next-get web framework.
+- [Preact](https://preactjs.com) - Fast 3kB alternative to React with the same modern API
 - [Tailwind CSS](https://chakra-ui.com/) - A simple, modular and accessible
   component library.
 - [Deno Deploy](https://deno.com/deploy) - Serverless JavaScript hosting with
