@@ -6,10 +6,18 @@ import {Direction, TrafficLevel} from '../types.ts';
 
 const URL = `https://www.travelmidwest.com/lmiga/travelTime.json?path=GATEWAY.IL.KENNEDY`;
 const PATH_BASE = `GATEWAY.IL.KENNEDY.KENNEDY REVERSIBLE`;
+
+// The _MAIN IDs are for the full length of the express lanes,
+// which can be used for travel time.
+// The _ALL IDs are for the shorter sections of the express lanes,
+// which cannot be used for travel time, but can be used for other data.
+
 const PATH_INBOUND = `${PATH_BASE} EB`;
-const ID_INBOUND = `IL-TESTTSC-249`;
+const ID_INBOUND_MAIN = `IL-TESTTSC-249`;
+const IDS_INBOUND_ALL = ['IL-TSCDMS-EB_I_90 Express_ADDISON_TO_OHIO_342'];
 const PATH_OUTBOUND = `${PATH_BASE} WB`;
-const ID_OUTBOUND = `IL-TESTTSC-250`;
+const ID_OUTBOUND_MAIN = `IL-TESTTSC-250`;
+const IDS_OUTBOUND_ALL = ['IL-TSCDMS-WB_I_90 Express_ARMITAGE_TO_MONTROSE_341'];
 const TIMEOUT_MS = 1_000;
 
 interface ReportRow {
@@ -51,12 +59,19 @@ const fetchApi = async (): Promise<APIResponse | null> => {
 export default async function Home() {
 	const data = await fetchApi();
 
-	const inboundData = data
-		?.find(row => row.tablePath === PATH_INBOUND)
-		?.reportRows.find(row => row.id === ID_INBOUND);
-	const outboundData = data
-		?.find(row => row.tablePath === PATH_OUTBOUND)
-		?.reportRows.find(row => row.id === ID_OUTBOUND);
+	const inboundDataRow = data?.find(row => row.tablePath === PATH_INBOUND);
+	const inboundData =
+		inboundDataRow?.reportRows.find(row => row.id === ID_INBOUND_MAIN) ??
+		inboundDataRow?.reportRows.find(row =>
+			IDS_INBOUND_ALL.includes(row.id),
+		);
+
+	const outboundDataRow = data?.find(row => row.tablePath === PATH_OUTBOUND);
+	const outboundData =
+		outboundDataRow?.reportRows.find(row => row.id === ID_OUTBOUND_MAIN) ??
+		outboundDataRow?.reportRows.find(row =>
+			IDS_OUTBOUND_ALL.includes(row.id),
+		);
 
 	let direction: Direction = Direction.Unknown;
 	let travelTime: number | null = null;
@@ -78,8 +93,11 @@ export default async function Home() {
 		const data = isInbound ? inboundData : outboundData;
 		if (data) {
 			direction = isInbound ? Direction.Inbound : Direction.Outbound;
-			travelTime = data.tt === -1 ? null : Math.round(data.tt);
-			averageTravelTime = data.avg === -1 ? null : Math.round(data.avg);
+			if ([ID_INBOUND_MAIN, ID_OUTBOUND_MAIN].includes(data.id)) {
+				travelTime = data.tt === -1 ? null : Math.round(data.tt);
+				averageTravelTime =
+					data.avg === -1 ? null : Math.round(data.avg);
+			}
 			speed =
 				data.spd === 'N/A' ? null : Math.round(parseFloat(data.spd));
 			level = data.level;
