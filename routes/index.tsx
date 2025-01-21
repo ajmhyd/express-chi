@@ -1,108 +1,13 @@
-import Congestion from '../components/Congestion.tsx';
+import {Congestion, LocalComparison} from '../components/Congestion.tsx';
 import Footer from '../components/Footer.tsx';
 import TravelTimeDifference from '../components/TravelTimeDifference.tsx';
 import Header from '../islands/Theme.tsx';
-import {Direction, TrafficLevel} from '../types.ts';
-
-const URL = `https://www.travelmidwest.com/lmiga/travelTime.json?path=GATEWAY.IL.KENNEDY`;
-const PATH_BASE = `GATEWAY.IL.KENNEDY.KENNEDY REVERSIBLE`;
-
-// The _MAIN IDs are for the full length of the express lanes,
-// which can be used for travel time.
-// The _ALL IDs are for the shorter sections of the express lanes,
-// which cannot be used for travel time, but can be used for other data.
-
-const PATH_INBOUND = `${PATH_BASE} EB`;
-const ID_INBOUND_MAIN = `IL-TESTTSC-249`;
-const IDS_INBOUND_ALL = ['IL-TSCDMS-EB_I_90 Express_ADDISON_TO_OHIO_342'];
-const PATH_OUTBOUND = `${PATH_BASE} WB`;
-const ID_OUTBOUND_MAIN = `IL-TESTTSC-250`;
-const IDS_OUTBOUND_ALL = ['IL-TSCDMS-WB_I_90 Express_ARMITAGE_TO_MONTROSE_341'];
-const TIMEOUT_MS = 1_000;
-
-interface ReportRow {
-	avg: number;
-	from: string;
-	id: string;
-	len: number;
-	level: TrafficLevel;
-	on: string;
-	ovrAvg: boolean;
-	spd: `${number}` | 'N/A';
-	to: string;
-	tt: number;
-}
-
-type APIResponse = Array<{
-	tablePath: string;
-	reportRows: ReportRow[];
-	tableName: string;
-}>;
-
-const fetchApi = async (): Promise<APIResponse | null> => {
-	const controller = new AbortController();
-	const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
-	try {
-		const response = await fetch(URL, {
-			signal: controller.signal,
-		});
-		clearTimeout(timeout);
-		if (!response.ok) return null;
-		return response.json();
-	} catch (error) {
-		clearTimeout(timeout);
-		console.error(error);
-		return null;
-	}
-};
+import {Direction} from '../types.ts';
+import {getData} from '../data/index.ts';
 
 export default async function Home() {
-	const data = await fetchApi();
-
-	const inboundDataRow = data?.find(row => row.tablePath === PATH_INBOUND);
-	const inboundData =
-		inboundDataRow?.reportRows.find(row => row.id === ID_INBOUND_MAIN) ??
-		inboundDataRow?.reportRows.find(row =>
-			IDS_INBOUND_ALL.includes(row.id),
-		);
-
-	const outboundDataRow = data?.find(row => row.tablePath === PATH_OUTBOUND);
-	const outboundData =
-		outboundDataRow?.reportRows.find(row => row.id === ID_OUTBOUND_MAIN) ??
-		outboundDataRow?.reportRows.find(row =>
-			IDS_OUTBOUND_ALL.includes(row.id),
-		);
-
-	let direction: Direction = Direction.Unknown;
-	let travelTime: number | null = null;
-	let averageTravelTime: number | null = null;
-	let speed: number | null = null;
-	let level: TrafficLevel = TrafficLevel.Unknown;
-
-	const isInbound = inboundData && inboundData?.level !== 'Unknown';
-	const isOutbound = outboundData && outboundData?.level !== 'Unknown';
-	// If we are missing some data or are both inbound and outbound simultaneously, the data should be considered unreliable
-	const isUnreliable =
-		!inboundData || !outboundData || (isInbound && isOutbound);
-
-	if (isUnreliable) {
-		direction = Direction.Unknown;
-	} else if (!isInbound && !isOutbound) {
-		direction = Direction.Closed;
-	} else {
-		const data = isInbound ? inboundData : outboundData;
-		if (data) {
-			direction = isInbound ? Direction.Inbound : Direction.Outbound;
-			if ([ID_INBOUND_MAIN, ID_OUTBOUND_MAIN].includes(data.id)) {
-				travelTime = data.tt === -1 ? null : Math.round(data.tt);
-				averageTravelTime =
-					data.avg === -1 ? null : Math.round(data.avg);
-			}
-			speed =
-				data.spd === 'N/A' ? null : Math.round(parseFloat(data.spd));
-			level = data.level;
-		}
-	}
+	const {direction, travelTime, averageTravelTime, speed, level, localSpd} =
+		await getData();
 
 	return (
 		<>
@@ -163,9 +68,9 @@ export default async function Home() {
 										</div>
 
 										<TravelTimeDifference
-											travelTime={travelTime}
+											travelTime={travelTime ?? null}
 											averageTravelTime={
-												averageTravelTime
+												averageTravelTime ?? null
 											}
 										/>
 									</dd>
@@ -177,12 +82,18 @@ export default async function Home() {
 									<dt className="text-base font-normal text-gray-900 dark:text-white">
 										Speed
 									</dt>
-									<dd className="mt-1 flex justify-between items-baseline md:block lg:flex">
-										<div className="flex items-baseline text-2xl font-semibold text-blue-300">
-											{speed?.toLocaleString() ?? 'N/A'}{' '}
-											mph
+									<dd className="mt-1 flex flex-col items-baseline lg:flex-row gap-2">
+										<div className="flex text-2xl font-semibold text-blue-300">
+											{speed?.toLocaleString() ?? 'N/A'}
+											&nbsp;MPH
 										</div>
-										<Congestion level={level} />
+										<div className="flex flex-row flex-wrap items-center lg:justify-end gap-2">
+											<Congestion level={level ?? null} />
+											<LocalComparison
+												express={speed ?? null}
+												local={localSpd ?? null}
+											/>
+										</div>
 									</dd>
 								</div>
 							</div>
