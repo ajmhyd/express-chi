@@ -13,7 +13,7 @@ const TravelTimeDifference = ({
 			: travelTime - averageTravelTime;
 
 	if (difference === null) {
-		return <div>Unknown</div>;
+		return null;
 	} else if (difference > 0) {
 		return (
 			<div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
