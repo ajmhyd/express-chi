@@ -1,10 +1,14 @@
-export default function Header({ mode, toggleMode }) {
+export default function Header({ mode, toggleMode }: {
+  mode: "dark" | "light";
+  toggleMode: (mode: "dark" | "light") => void;
+}) {
   return (
     <header>
       <div className="flex justify-end mx-auto max-w-7xl px-4 mt-10">
         {mode === "dark"
           ? (
             <button
+              type="button"
               onClick={() => toggleMode("light")}
               className="flex items-center justify-center h-12 w-12 rounded-md text-white"
             >
@@ -26,6 +30,7 @@ export default function Header({ mode, toggleMode }) {
           )
           : (
             <button
+              type="button"
               onClick={() => toggleMode("dark")}
               className="flex items-center justify-center h-12 w-12 rounded-md text-black"
             >

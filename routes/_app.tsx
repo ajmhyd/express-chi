@@ -1,7 +1,7 @@
-import { AppProps } from "$fresh/server.ts";
+import { PageProps } from "$fresh/server.ts";
 import { asset, Head } from "$fresh/runtime.ts";
 
-export default function App({ Component }: AppProps) {
+export default function App({ Component }: PageProps) {
   const code = `function global_dark() {
     if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
     document.documentElement.classList.add('dark')
@@ -11,7 +11,7 @@ export default function App({ Component }: AppProps) {
 }
   global_dark();`;
   return (
-    <html>
+    <html lang="en">
       <Head>
         <title>Express Chi | Chicago Express Lane Status</title>
         <meta charSet="utf-8" />
