@@ -92,12 +92,11 @@ export default async function getData(
     .filter((row) => [ID_OUTBOUND_MAIN, ...IDS_OUTBOUND_ALL].includes(row.id))
     .sort(sortFn)[0];
 
-  const isInbound = inboundData &&
-    inboundData?.level !== "Unknown" &&
-    (!knownDirection || knownDirection === Direction.Inbound);
-  const isOutbound = outboundData &&
-    outboundData?.level !== "Unknown" &&
-    (!knownDirection || knownDirection === Direction.Outbound);
+  const isInbound = inboundData?.level !== "Unknown" ||
+    knownDirection === Direction.Inbound;
+  const isOutbound = outboundData?.level !== "Unknown" ||
+    knownDirection === Direction.Outbound;
+
   // If we are missing some data or are both inbound and outbound simultaneously, the data should be considered unreliable
   const isUnreliable = !inboundData || !outboundData ||
     (isInbound && isOutbound);
@@ -114,12 +113,22 @@ export default async function getData(
     const rowData = isInbound ? inboundData : outboundData;
     if (rowData) {
       const direction = isInbound ? Direction.Inbound : Direction.Outbound;
-
       let travelTime: number | null = null;
       let averageTravelTime: number | null = null;
-      if ([ID_INBOUND_MAIN, ID_OUTBOUND_MAIN].includes(rowData.id)) {
-        travelTime = rowData.tt === -1 ? null : Math.round(rowData.tt);
-        averageTravelTime = rowData.avg === -1 ? null : Math.round(rowData.avg);
+      if (
+        [
+          ID_INBOUND_MAIN,
+          ID_OUTBOUND_MAIN,
+          ...IDS_OUTBOUND_ALL,
+          ...IDS_INBOUND_ALL,
+        ].includes(
+          rowData.id,
+        )
+      ) {
+        travelTime = rowData.tt === -1 ? null : Math.round(+rowData.tt);
+        averageTravelTime = rowData.avg === -1
+          ? null
+          : Math.round(+rowData.avg);
       }
       const speed = rowData.spd === "N/A"
         ? null
