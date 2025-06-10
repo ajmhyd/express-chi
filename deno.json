@@ -17,7 +17,7 @@
     "tailwindcss": "npm:tailwindcss@3.4.14",
     "tailwindcss/": "npm:/tailwindcss@3.4.14/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.4.14/plugin.js",
-    "$std/": "https://deno.land/std@0.193.0/"
+    "$std/": "https://deno.land/std@0.224.0/"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
   "exclude": ["**/_fresh/*"]
