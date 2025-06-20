@@ -31,5 +31,5 @@
   "exclude": [
     "**/_fresh/*"
   ],
-  "nodeModulesDir": "auto"
+  "nodeModulesDir": true
 }
