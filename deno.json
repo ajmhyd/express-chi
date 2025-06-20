@@ -16,9 +16,8 @@
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
-    "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
     "@preact/signals": "https://esm.sh/*@preact/signals@2.2.0",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
+    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.10.0",
     "preact": "https://esm.sh/preact@10.26.9",
     "preact/": "https://esm.sh/preact@10.26.9/",
     "tailwindcss": "npm:tailwindcss@3.4.14",
