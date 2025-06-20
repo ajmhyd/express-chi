@@ -18,7 +18,7 @@ const TravelTimeDifference = ({
     return (
       <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">
         <svg
-          className="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-red-500"
+          className="-ml-1 mr-0.5 shrink-0 self-center h-5 w-5 text-red-500"
           fill="currentColor"
           viewBox="0 0 20 20"
           aria-hidden="true"
@@ -37,7 +37,7 @@ const TravelTimeDifference = ({
     return (
       <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
         <svg
-          className="-ml-1 mr-0.5 flex-shrink-0 self-center h-5 w-5 text-green-500"
+          className="-ml-1 mr-0.5 shrink-0 self-center h-5 w-5 text-green-500"
           fill="currentColor"
           viewBox="0 0 20 20"
           aria-hidden="true"

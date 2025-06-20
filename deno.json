@@ -16,13 +16,13 @@
   },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@pakornv/fresh-plugin-tailwindcss": "jsr:@pakornv/fresh-plugin-tailwindcss@^1.0.3",
     "@preact/signals": "https://esm.sh/*@preact/signals@2.2.0",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.10.0",
     "preact": "https://esm.sh/preact@10.26.9",
     "preact/": "https://esm.sh/preact@10.26.9/",
-    "tailwindcss": "npm:tailwindcss@3.4.14",
-    "tailwindcss/": "npm:/tailwindcss@3.4.14/",
-    "tailwindcss/plugin": "npm:/tailwindcss@3.4.14/plugin.js"
+    "tailwindcss": "npm:tailwindcss@4.1.10",
+    "tailwindcss/": "npm:/tailwindcss@4.1.10/"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
@@ -30,5 +30,6 @@
   },
   "exclude": [
     "**/_fresh/*"
-  ]
+  ],
+  "nodeModulesDir": "auto"
 }
