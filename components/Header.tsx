@@ -10,7 +10,7 @@ export default function Header({ mode, toggleMode }: {
             <button
               type="button"
               onClick={() => toggleMode("light")}
-              className="flex items-center justify-center h-12 w-12 rounded-md text-white"
+              className="flex items-center justify-center h-12 w-12 rounded-md text-white cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ export default function Header({ mode, toggleMode }: {
             <button
               type="button"
               onClick={() => toggleMode("dark")}
-              className="flex items-center justify-center h-12 w-12 rounded-md text-black"
+              className="flex items-center justify-center h-12 w-12 rounded-md text-black cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
