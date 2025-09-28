@@ -15,11 +15,10 @@
   },
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.4",
-    "@pakornv/fresh-plugin-tailwindcss": "jsr:@pakornv/fresh-plugin-tailwindcss@^1.0.3",
     "@preact/signals": "npm:@preact/signals@^2.3.1",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.13",
     "preact": "npm:preact@^10.27.2",
-    "tailwindcss": "npm:tailwindcss@4.1.11",
+    "tailwindcss": "npm:tailwindcss@4.1.13",
     "fresh": "jsr:@fresh/core@^2.1.1",
     "vite": "npm:vite@^7.1.7"
   },

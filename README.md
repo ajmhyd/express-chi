@@ -16,7 +16,7 @@ Make sure to install Deno:
 Then start the project:
 
 ```
-deno task start
+deno task dev
 ```
 
 This will watch the project directory and restart as necessary.
@@ -31,6 +31,7 @@ This will watch the project directory and restart as necessary.
   modern API
 - [Tailwind CSS](https://chakra-ui.com/) - A simple, modular and accessible
   component library.
+- [Vite](https://vitejs.dev/) - The build tool for the web.
 - [Deno Deploy](https://deno.com/deploy) - Serverless JavaScript hosting with
   zero config, worldwide.
 - [IDOT](https://idot.illinois.gov/) - Gateway traffic information courtesy of
