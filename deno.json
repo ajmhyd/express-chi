@@ -1,10 +1,9 @@
 {
-  "lock": false,
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts",
-    "update": "deno run -A -r https://fresh.deno.dev/update .",
-    "build": "deno run -A dev.ts build",
-    "preview": "deno run -A main.ts"
+    "update": "deno run -A -r jsr:@fresh/update .",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "deno serve -A _fresh/server.js"
   },
   "lint": {
     "rules": {
@@ -15,14 +14,14 @@
     }
   },
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
+    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.4",
     "@pakornv/fresh-plugin-tailwindcss": "jsr:@pakornv/fresh-plugin-tailwindcss@^1.0.3",
-    "@preact/signals": "https://esm.sh/*@preact/signals@2.2.0",
-    "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.10.0",
-    "preact": "https://esm.sh/preact@10.26.9",
-    "preact/": "https://esm.sh/preact@10.26.9/",
+    "@preact/signals": "npm:@preact/signals@^2.3.1",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.13",
+    "preact": "npm:preact@^10.27.2",
     "tailwindcss": "npm:tailwindcss@4.1.11",
-    "tailwindcss/": "npm:/tailwindcss@4.1.11/"
+    "fresh": "jsr:@fresh/core@^2.1.1",
+    "vite": "npm:vite@^7.1.7"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

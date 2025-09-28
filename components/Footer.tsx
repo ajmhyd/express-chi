@@ -1,4 +1,4 @@
-import { asset } from "$fresh/runtime.ts";
+import { asset } from "fresh/runtime";
 
 const Footer = () => {
   return (

@@ -1,5 +1,5 @@
-import { PageProps } from "$fresh/server.ts";
-import { asset, Head } from "$fresh/runtime.ts";
+import { PageProps } from "fresh";
+import { asset, Head } from "fresh/runtime";
 
 export default function App({ Component }: PageProps) {
   const code = `function global_dark() {
