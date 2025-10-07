@@ -1,18 +1,10 @@
 {
   "tasks": {
-    "update": "deno run -A -r jsr:@fresh/update .",
     "dev": "vite",
     "build": "vite build",
     "preview": "deno serve -A _fresh/server.js"
   },
-  "lint": {
-    "rules": {
-      "tags": [
-        "fresh",
-        "recommended"
-      ]
-    }
-  },
+  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.4",
     "@preact/signals": "npm:@preact/signals@^2.3.1",
@@ -22,12 +14,7 @@
     "fresh": "jsr:@fresh/core@^2.1.1",
     "vite": "npm:vite@^7.1.7"
   },
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact"
-  },
-  "exclude": [
-    "**/_fresh/*"
-  ],
+  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "exclude": ["**/_fresh/*"],
   "nodeModulesDir": "auto"
 }
