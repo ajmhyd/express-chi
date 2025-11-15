@@ -2,7 +2,7 @@ import { Direction, TrafficLevel } from "../types.ts";
 import { ExpressData, request } from "./index.ts";
 
 const URL =
-  `https://www.travelmidwest.com/lmiga/travelTime.json?path=GATEWAY.IL.KENNEDY`;
+  `https://travelmidwest.com/lmiga/travelTime.json?path=GATEWAY.IL.KENNEDY`;
 const PATH_BASE = `GATEWAY.IL.KENNEDY.KENNEDY`;
 const PATH_BASE_REV = `${PATH_BASE} REVERSIBLE`;
 
