@@ -81,7 +81,8 @@ export default function DataDisplay() {
   if (!data) {
     return (
       <div className="flex flex-col items-center justify-center mt-10 space-y-4">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-300"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-300">
+        </div>
         <p className="text-lg text-gray-600 dark:text-gray-400">
           Loading traffic data...
         </p>
@@ -147,18 +148,20 @@ export default function DataDisplay() {
                             Data unavailable
                           </span>
                         )}
-                      <span className="ml-2 text-sm font-medium text-gray-500">
-                        {averageTravelTime !== null &&
-                            averageTravelTime !== undefined
-                          ? (
-                            `${averageTravelTime.toLocaleString()} min avg`
-                          )
-                          : (
-                            <span className="italic">
-                              Data unavailable
-                            </span>
-                          )}
-                      </span>
+                      {travelTime !== null && travelTime !== undefined && (
+                        <span className="ml-2 text-sm font-medium text-gray-500">
+                          {averageTravelTime !== null &&
+                              averageTravelTime !== undefined
+                            ? (
+                              `${averageTravelTime.toLocaleString()} min avg`
+                            )
+                            : (
+                              <span className="italic">
+                                Data unavailable
+                              </span>
+                            )}
+                        </span>
+                      )}
                     </div>
 
                     <TravelTimeDifference
