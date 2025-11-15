@@ -50,7 +50,7 @@ export default async function getData(): Promise<ExpressData | null> {
     )
   );
 
-  if (activeDirections.length === 0 || activeDirections.length > 2) {
+  if (activeDirections.length === 0) {
     return {
       direction: Direction.Unknown,
     };

@@ -52,14 +52,12 @@ const TravelTimeDifference = ({
         {Math.abs(difference)} min
       </div>
     );
-  } else if (difference === 0) {
+  } else {
     return (
       <div className="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
         0 min
       </div>
     );
-  } else {
-    return <div>error</div>;
   }
 };
 

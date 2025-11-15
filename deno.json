@@ -14,7 +14,11 @@
     "fresh": "jsr:@fresh/core@^2.1.4",
     "vite": "npm:vite@^7.2.2"
   },
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "lib": ["deno.ns", "dom", "dom.iterable"]
+  },
   "exclude": ["**/_fresh/*"],
   "nodeModulesDir": "auto"
 }

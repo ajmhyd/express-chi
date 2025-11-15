@@ -29,8 +29,8 @@ This will watch the project directory and restart as necessary.
 - [Fresh](https://fresh.deno.dev) - The next-get web framework.
 - [Preact](https://preactjs.com) - Fast 3kB alternative to React with the same
   modern API
-- [Tailwind CSS](https://chakra-ui.com/) - A simple, modular and accessible
-  component library.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for
+  rapidly building custom designs.
 - [Vite](https://vitejs.dev/) - The build tool for the web.
 - [Deno Deploy](https://deno.com/deploy) - Serverless JavaScript hosting with
   zero config, worldwide.
