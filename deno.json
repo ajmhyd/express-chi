@@ -8,11 +8,11 @@
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
     "@preact/signals": "npm:@preact/signals@^2.5.1",
-    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.17",
-    "preact": "npm:preact@^10.27.2",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.18",
+    "preact": "npm:preact@^10.28.0",
     "tailwindcss": "npm:tailwindcss@4.1.17",
     "fresh": "jsr:@fresh/core@^2.2.0",
-    "vite": "npm:vite@^7.2.4"
+    "vite": "npm:vite@^7.2.7"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
