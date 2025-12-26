@@ -109,7 +109,7 @@ export default function DataDisplay() {
         ? (
           <h1 className="text-4xl mt-4 text-center tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
             <span className="block xl:inline">Status:</span>
-            <span className="block text-blue-300 xl:inline">
+            <span className="block text-blue-600 dark:text-blue-300 xl:inline">
               {direction}
             </span>
           </h1>
@@ -123,7 +123,7 @@ export default function DataDisplay() {
                     Direction
                   </dt>
                   <dd className="mt-1 flex justify-between items-baseline md:block lg:flex">
-                    <div className="flex items-baseline text-2xl font-semibold text-blue-300">
+                    <div className="flex items-baseline text-2xl font-semibold text-blue-600 dark:text-blue-300">
                       {direction}
                     </div>
                   </dd>
@@ -139,7 +139,7 @@ export default function DataDisplay() {
                     <div className="flex items-baseline text-2xl mr-2 font-semibold">
                       {travelTime !== null && travelTime !== undefined
                         ? (
-                          <span className="text-blue-300">
+                          <span className="text-blue-600 dark:text-blue-300">
                             {travelTime.toLocaleString()} minutes
                           </span>
                         )
@@ -181,7 +181,7 @@ export default function DataDisplay() {
                     <div className="flex text-2xl font-semibold">
                       {speed !== null && speed !== undefined
                         ? (
-                          <span className="text-blue-300">
+                          <span className="text-blue-600 dark:text-blue-300">
                             {speed.toLocaleString()} MPH
                           </span>
                         )

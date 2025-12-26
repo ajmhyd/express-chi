@@ -14,7 +14,7 @@ const Footer = () => {
         <p className="mt-8 text-center text-base text-gray-600 dark:text-gray-300">
           Made with ❤ by{" "}
             <a
-              className="text-gray-700 dark:text-gray-400"
+              className="text-gray-700 dark:text-gray-400 underline"
               href="https://github.com/ajmhyd"
             >
             Tësh
