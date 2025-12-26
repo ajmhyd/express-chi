@@ -8,9 +8,9 @@ const Footer = () => {
           Gateway traffic information courtesy of the Illinois Department of
           Transportation
         </p>
-        <div className="mt-8 flex justify-center space-x-6">
-          <img src={asset("/idotLogo.webp")} alt="IDOT Logo" width={400} height={102} fetchpriority="high" />
-        </div>
+         <div className="mt-8 flex justify-center space-x-6">
+           <img src={asset("/idotLogo.webp")} alt="IDOT Logo" width={665} height={170} />
+         </div>
         <p className="mt-8 text-center text-base text-gray-600 dark:text-gray-300">
           Made with ❤ by{" "}
             <a
