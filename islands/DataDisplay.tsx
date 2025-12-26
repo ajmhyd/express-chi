@@ -101,7 +101,7 @@ export default function DataDisplay() {
         </div>
       )}
       {lastUpdate && (
-        <div className="text-center text-xs text-gray-400 mb-4">
+        <div className="text-center text-xs text-gray-600 mb-4">
           Last updated: {lastUpdate.toLocaleTimeString()}
         </div>
       )}

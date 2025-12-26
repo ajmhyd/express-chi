@@ -9,7 +9,7 @@
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
     "@preact/signals": "npm:@preact/signals@^2.5.1",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.18",
-    "preact": "npm:preact@^10.28.0",
+    "preact": "npm:preact@^10.28.1",
     "tailwindcss": "npm:tailwindcss@4.1.18",
     "fresh": "jsr:@fresh/core@^2.2.0",
     "vite": "npm:vite@^7.3.0"

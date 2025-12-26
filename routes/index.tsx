@@ -15,7 +15,7 @@ export default function Home() {
                 Chicago Express Lane Status
               </span>
             </h1>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            <p className="mt-3 max-w-md mx-auto text-base text-gray-700 dark:text-gray-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
               Up to date information on the Chicago Kennedy Express lanes
             </p>
           </div>
