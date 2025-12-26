@@ -4,8 +4,8 @@ View the status of the Chicago Kennedy express lanes
 [expresschi.com](https://expresschi.com)
 
 <p align="center">
-  <img src="static/expresschimobile.png" alt="Express Chi mobile"/>
-  <img src="static/expresschi.png" alt="Express Chi web"/>
+  <img src="static/expresschimobile.webp" alt="Express Chi mobile"/>
+  <img src="static/expresschi.webp" alt="Express Chi web"/>
 </p>
 
 ## Usage
