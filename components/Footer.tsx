@@ -8,15 +8,21 @@ const Footer = () => {
           Gateway traffic information courtesy of the Illinois Department of
           Transportation
         </p>
-         <div className="mt-8 flex justify-center space-x-6">
-           <img src={asset("/idotLogo.webp")} alt="IDOT Logo" width={665} height={170} />
-         </div>
+        <div className="mt-8 flex justify-center space-x-6">
+          <img
+            src={asset("/idotLogo.webp")}
+            alt="IDOT Logo"
+            width={665}
+            height={170}
+            fetchpriority="high"
+          />
+        </div>
         <p className="mt-8 text-center text-base text-gray-600 dark:text-gray-300">
           Made with ❤ by{" "}
-            <a
-              className="text-gray-700 dark:text-gray-400 underline"
-              href="https://github.com/ajmhyd"
-            >
+          <a
+            className="text-gray-700 dark:text-gray-400 underline"
+            href="https://github.com/ajmhyd"
+          >
             Tësh
           </a>
         </p>

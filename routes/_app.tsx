@@ -16,7 +16,10 @@ export default function App({ Component }: PageProps) {
         <title>Express Chi | Chicago Express Lane Status</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Up-to-date traffic information for the Chicago Kennedy Express Lanes, including real-time congestion levels, travel times, and speeds." />
+        <meta
+          name="description"
+          content="Up-to-date traffic information for the Chicago Kennedy Express Lanes, including real-time congestion levels, travel times, and speeds."
+        />
         <link rel="icon" href={asset("/favicon.ico")} />
         <link rel="stylesheet" href="/styles.css" />
         <script dangerouslySetInnerHTML={{ __html: code }}></script>
