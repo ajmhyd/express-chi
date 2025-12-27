@@ -17,6 +17,9 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
   const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Set initial timestamp since data was just fetched server-side
+    setLastUpdate(new Date());
+
     // Start polling for updates (initial data already rendered server-side)
     const startPolling = () => {
       if (intervalRef.current) return;
@@ -98,7 +101,7 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
 
   return (
     <>
-      <div className="text-center mb-2 min-h-[2.5rem]">
+      <div className="text-center mb-2">
         {loading && (
           <span className="text-sm text-gray-500">
             Updating traffic data...

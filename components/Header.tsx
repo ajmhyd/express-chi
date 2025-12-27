@@ -1,10 +1,13 @@
-export default function Header({ mode, toggleMode }: {
+export default function Header({
+  mode,
+  toggleMode,
+}: {
   mode: "dark" | "light";
   toggleMode: (mode: "dark" | "light") => void;
 }) {
   return (
     <header>
-      <div className="flex justify-end mx-auto max-w-7xl px-4 mt-10">
+      <div className="flex justify-end mx-auto max-w-7xl px-4 mt-4">
         {mode === "dark"
           ? (
             <button
