@@ -153,7 +153,7 @@ export default function DataDisplay() {
                             `${averageTravelTime.toLocaleString()} min avg`
                           )
                           : (
-                            <span className="italic">
+                            <span className="text-gray-600 dark:text-gray-300 italic text-lg">
                               Data unavailable
                             </span>
                           )}
