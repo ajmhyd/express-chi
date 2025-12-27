@@ -1,4 +1,4 @@
-import { Direction, TrafficLevel } from "../types.ts";
+import { Direction, ExpressData } from "../types.ts";
 import getSigAlertData from "./sigalert.ts";
 import getTravelMidwestData from "./travelmidwest.ts";
 
@@ -69,11 +69,4 @@ export async function getData(): Promise<ExpressData> {
   return result;
 }
 
-export interface ExpressData {
-  direction: Direction;
-  level?: TrafficLevel | null;
-  travelTime?: number | null;
-  averageTravelTime?: number | null;
-  speed?: number | null;
-  localSpd?: number | null;
-}
+export type { ExpressData };

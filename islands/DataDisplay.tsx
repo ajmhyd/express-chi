@@ -1,28 +1,58 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import TravelTimeDifference from "../components/TravelTimeDifference.tsx";
 import { Congestion, LocalComparison } from "../components/Congestion.tsx";
-import { Direction } from "../types.ts";
-import { ExpressData } from "../data/index.ts";
+import { Direction, ExpressData } from "../types.ts";
 
-export default function DataDisplay() {
-  const [data, setData] = useState<ExpressData | null>(null);
+interface DataDisplayProps {
+  initialData: ExpressData;
+}
+
+export default function DataDisplay({ initialData }: DataDisplayProps) {
+  const [data, setData] = useState<ExpressData>(initialData);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const retryTimeoutRef = useRef<number | null>(null);
+  const intervalRef = useRef<number | null>(null);
 
   useEffect(() => {
-    fetchData();
-    const interval = setInterval(() => fetchData(), 5 * 60 * 1000);
+    // Start polling for updates (initial data already rendered server-side)
+    const startPolling = () => {
+      if (intervalRef.current) return;
+      intervalRef.current = setInterval(() => fetchData(), 5 * 60 * 1000);
+    };
+
+    const stopPolling = () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+
+    // Handle page visibility changes to pause/resume polling
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopPolling();
+      } else {
+        // Fetch fresh data when tab becomes visible again
+        fetchData();
+        startPolling();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    startPolling();
+
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      stopPolling();
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
       }
       if (retryTimeoutRef.current) {
         clearTimeout(retryTimeoutRef.current);
       }
-      clearInterval(interval);
     };
   }, []);
 
@@ -63,48 +93,28 @@ export default function DataDisplay() {
     }
   }
 
-  if (error && !data) {
-    return (
-      <div className="text-center mt-10">
-        <div className="text-red-500 mb-2">{error}</div>
-        <button
-          type="button"
-          onClick={() => fetchData()}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div className="flex flex-col items-center justify-center mt-10 space-y-4">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-300">
-        </div>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Loading traffic data...
-        </p>
-      </div>
-    );
-  }
-
   const { direction, travelTime, averageTravelTime, speed, level, localSpd } =
     data;
 
   return (
     <>
-      {loading && (
-        <div className="text-center text-sm text-gray-500 mb-2">
-          Updating traffic data...
-        </div>
-      )}
-      {lastUpdate && (
-        <div className="text-center text-xs text-gray-600 mb-4">
-          Last updated: {lastUpdate.toLocaleTimeString()}
-        </div>
-      )}
+      <div className="text-center mb-2 min-h-[2.5rem]">
+        {loading && (
+          <span className="text-sm text-gray-500">
+            Updating traffic data...
+          </span>
+        )}
+        {error && !loading && (
+          <span className="text-sm text-red-500">
+            {error} - showing cached data
+          </span>
+        )}
+        {lastUpdate && !loading && !error && (
+          <span className="text-xs text-gray-600 dark:text-gray-400">
+            Last updated: {lastUpdate.toLocaleTimeString()}
+          </span>
+        )}
+      </div>
       {[Direction.Unknown, Direction.Closed].includes(direction)
         ? (
           <h1 className="text-4xl mt-4 text-center tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
@@ -116,7 +126,7 @@ export default function DataDisplay() {
         )
         : (
           <>
-            <div className="mt-5 grid grid-cols-1 rounded-lg bg-white dark:bg-gray-900 overflow-hidden shadow divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 md:divide-x">
+            <div className="mt-5 grid grid-cols-1 rounded-lg bg-white dark:bg-gray-900 overflow-hidden shadow divide-y divide-gray-300 md:grid-cols-3 md:divide-y-0 md:divide-x">
               <dl className="px-4 py-5 sm:p-6">
                 <dt className="text-base font-normal  text-gray-900 dark:text-white">
                   Direction
@@ -141,7 +151,7 @@ export default function DataDisplay() {
                         </span>
                       )
                       : (
-                        <span className="text-gray-400 italic text-lg">
+                        <span className="text-gray-500 dark:text-gray-400 italic text-lg">
                           Data unavailable
                         </span>
                       )}
@@ -153,7 +163,7 @@ export default function DataDisplay() {
                             `${averageTravelTime.toLocaleString()} min avg`
                           )
                           : (
-                            <span className="text-gray-600 dark:text-gray-300 italic text-lg">
+                            <span className="text-gray-700 italic text-lg">
                               Data unavailable
                             </span>
                           )}
@@ -181,7 +191,7 @@ export default function DataDisplay() {
                         </span>
                       )
                       : (
-                        <span className="text-gray-400 italic text-lg">
+                        <span className="text-gray-500 dark:text-gray-400 italic text-lg">
                           Data unavailable
                         </span>
                       )}

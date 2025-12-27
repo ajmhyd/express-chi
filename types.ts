@@ -12,3 +12,12 @@ export const enum Direction {
   Outbound = "Outbound",
   Closed = "Closed",
 }
+
+export interface ExpressData {
+  direction: Direction;
+  level?: TrafficLevel | null;
+  travelTime?: number | null;
+  averageTravelTime?: number | null;
+  speed?: number | null;
+  localSpd?: number | null;
+}

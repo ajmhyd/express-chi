@@ -14,7 +14,9 @@ const Footer = () => {
             alt="IDOT Logo"
             width={665}
             height={170}
-            fetchpriority="high"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
           />
         </div>
         <p className="mt-8 text-center text-base text-gray-600 dark:text-gray-300">
