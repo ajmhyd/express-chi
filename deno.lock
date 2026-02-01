@@ -29,17 +29,17 @@
     "npm:@babel/preset-react@^7.27.1": "7.28.5_@babel+core@7.28.5",
     "npm:@mjackson/node-fetch-server@0.7": "0.7.0",
     "npm:@opentelemetry/api@^1.9.0": "1.9.0",
-    "npm:@preact/signals@^2.2.1": "2.5.1_preact@10.28.2",
-    "npm:@preact/signals@^2.5.1": "2.5.1_preact@10.28.2",
-    "npm:@prefresh/vite@^2.4.8": "2.4.11_preact@10.28.2_vite@7.3.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0",
+    "npm:@preact/signals@^2.2.1": "2.6.2_preact@10.28.3",
+    "npm:@preact/signals@^2.6.2": "2.6.2_preact@10.28.3",
+    "npm:@prefresh/vite@^2.4.8": "2.4.11_preact@10.28.3_vite@7.3.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0",
     "npm:@tailwindcss/vite@^4.1.18": "4.1.18_vite@7.3.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0",
     "npm:@types/node@*": "24.2.0",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
-    "npm:preact-render-to-string@^6.6.3": "6.6.3_preact@10.28.2",
-    "npm:preact@^10.27.0": "10.28.2",
-    "npm:preact@^10.27.2": "10.28.2",
-    "npm:preact@^10.28.2": "10.28.2",
+    "npm:preact-render-to-string@^6.6.3": "6.6.3_preact@10.28.3",
+    "npm:preact@^10.27.0": "10.28.3",
+    "npm:preact@^10.27.2": "10.28.3",
+    "npm:preact@^10.28.3": "10.28.3",
     "npm:tailwindcss@4.1.18": "4.1.18",
     "npm:vite@^7.3.1": "7.3.1_@types+node@24.2.0_picomatch@4.0.3"
   },
@@ -626,11 +626,11 @@
     "@opentelemetry/api@1.9.0": {
       "integrity": "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg=="
     },
-    "@preact/signals-core@1.12.1": {
-      "integrity": "sha512-BwbTXpj+9QutoZLQvbttRg5x3l5468qaV2kufh+51yha1c53ep5dY4kTuZR35+3pAZxpfQerGJiQqg34ZNZ6uA=="
+    "@preact/signals-core@1.12.2": {
+      "integrity": "sha512-5Yf8h1Ke3SMHr15xl630KtwPTW4sYDFkkxS0vQ8UiQLWwZQnrF9IKaVG1mN5VcJz52EcWs2acsc/Npjha/7ysA=="
     },
-    "@preact/signals@2.5.1_preact@10.28.2": {
-      "integrity": "sha512-VPjk5YFt7i11Fi4UK0tzaEe5xLwfhUxXL3l89ocxQ5aPz7bRo8M5+N73LjBMPklyXKYKz6YsNo4Smp8n6nplng==",
+    "@preact/signals@2.6.2_preact@10.28.3": {
+      "integrity": "sha512-80PMfNS3d8t/J3cRNEJP14zRioWnavgqzX/+tsNGiCX6rpD26+eLkUQpa1sIeOERZMink+dAi34y0MJhg11LKQ==",
       "dependencies": [
         "@preact/signals-core",
         "preact"
@@ -639,7 +639,7 @@
     "@prefresh/babel-plugin@0.5.2": {
       "integrity": "sha512-AOl4HG6dAxWkJ5ndPHBgBa49oo/9bOiJuRDKHLSTyH+Fd9x00shTXpdiTj1W41l6oQIwUOAgJeHMn4QwIDpHkA=="
     },
-    "@prefresh/core@1.5.9_preact@10.28.2": {
+    "@prefresh/core@1.5.9_preact@10.28.3": {
       "integrity": "sha512-IKBKCPaz34OFVC+adiQ2qaTF5qdztO2/4ZPf4KsRTgjKosWqxVXmEbxCiUydYZRY8GVie+DQlKzQr9gt6HQ+EQ==",
       "dependencies": [
         "preact"
@@ -648,7 +648,7 @@
     "@prefresh/utils@1.2.1": {
       "integrity": "sha512-vq/sIuN5nYfYzvyayXI4C2QkprfNaHUQ9ZX+3xLD8nL3rWyzpxOm1+K7RtMbhd+66QcaISViK7amjnheQ/4WZw=="
     },
-    "@prefresh/vite@2.4.11_preact@10.28.2_vite@7.3.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0": {
+    "@prefresh/vite@2.4.11_preact@10.28.3_vite@7.3.1__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0": {
       "integrity": "sha512-/XjURQqdRiCG3NpMmWqE9kJwrg9IchIOWHzulCfqg2sRe/8oQ1g5De7xrk9lbqPIQLn7ntBkKdqWXIj4E9YXyg==",
       "dependencies": [
         "@babel/core",
@@ -1147,14 +1147,14 @@
         "source-map-js"
       ]
     },
-    "preact-render-to-string@6.6.3_preact@10.28.2": {
+    "preact-render-to-string@6.6.3_preact@10.28.3": {
       "integrity": "sha512-7oHG7jzjriqsFPkSPiPnzrQ0GcxFm6wOkYWNdStK5Ks9YlWSQQXKGBRAX4nKDdqX7HAQuRvI4pZNZMycK4WwDw==",
       "dependencies": [
         "preact"
       ]
     },
-    "preact@10.28.2": {
-      "integrity": "sha512-lbteaWGzGHdlIuiJ0l2Jq454m6kcpI1zNje6d8MlGAFlYvP2GO4ibnat7P74Esfz4sPTdM6UxtTwh/d3pwM9JA=="
+    "preact@10.28.3": {
+      "integrity": "sha512-tCmoRkPQLpBeWzpmbhryairGnhW9tKV6c6gr/w+RhoRoKEJwsjzipwp//1oCpGPOchvSLaAPlpcJi9MwMmoPyA=="
     },
     "rollup@4.53.2": {
       "integrity": "sha512-MHngMYwGJVi6Fmnk6ISmnk7JAHRNF0UkuucA0CUW3N3a4KnONPEZz+vUanQP/ZC/iY1Qkf3bwPWzyY84wEks1g==",
@@ -1247,9 +1247,9 @@
     "dependencies": [
       "jsr:@fresh/core@^2.2.0",
       "jsr:@fresh/plugin-vite@^1.0.8",
-      "npm:@preact/signals@^2.5.1",
+      "npm:@preact/signals@^2.6.2",
       "npm:@tailwindcss/vite@^4.1.18",
-      "npm:preact@^10.28.2",
+      "npm:preact@^10.28.3",
       "npm:tailwindcss@4.1.18",
       "npm:vite@^7.3.1"
     ]
