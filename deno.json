@@ -7,7 +7,7 @@
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
-    "@preact/signals": "npm:@preact/signals@^2.6.2",
+    "@preact/signals": "npm:@preact/signals@^2.8.0",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.18",
     "preact": "npm:preact@^10.28.3",
     "tailwindcss": "npm:tailwindcss@4.1.18",
