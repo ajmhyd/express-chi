@@ -8,9 +8,9 @@
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
     "@preact/signals": "npm:@preact/signals@^2.9.0",
-    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.2",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.4",
     "preact": "npm:preact@^10.29.1",
-    "tailwindcss": "npm:tailwindcss@4.2.2",
+    "tailwindcss": "npm:tailwindcss@4.2.4",
     "fresh": "jsr:@fresh/core@^2.2.2",
     "vite": "npm:vite@^7.3.1"
   },
