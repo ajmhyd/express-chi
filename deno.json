@@ -2,23 +2,36 @@
   "tasks": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "deno serve -A _fresh/server.js"
+    "preview": "deno serve --allow-net --allow-read _fresh/server.js"
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
   "imports": {
-    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+    "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
     "@preact/signals": "npm:@preact/signals@^2.9.0",
-    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.2.4",
-    "preact": "npm:preact@^10.29.1",
-    "tailwindcss": "npm:tailwindcss@4.2.4",
-    "fresh": "jsr:@fresh/core@^2.2.2",
-    "vite": "npm:vite@^7.3.1"
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.0",
+    "preact": "npm:preact@^10.29.2",
+    "tailwindcss": "npm:tailwindcss@4.3.0",
+    "fresh": "jsr:@fresh/core@^2.3.3",
+    "vite": "npm:vite@^7.3.3"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "lib": ["deno.ns", "dom", "dom.iterable"]
+    "lib": [
+      "deno.ns",
+      "dom",
+      "dom.iterable"
+    ]
   },
-  "exclude": ["**/_fresh/*"],
+  "exclude": [
+    "**/_fresh/*"
+  ],
   "nodeModulesDir": "auto"
 }
