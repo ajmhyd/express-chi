@@ -32,19 +32,19 @@
     "npm:@babel/core@^7.28.0": "7.29.0",
     "npm:@babel/preset-react@^7.27.1": "7.28.5_@babel+core@7.29.0",
     "npm:@opentelemetry/api@^1.9.0": "1.9.1",
-    "npm:@preact/signals@^2.5.1": "2.9.2_preact@10.29.3",
-    "npm:@preact/signals@^2.9.2": "2.9.2_preact@10.29.3",
-    "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.3_vite@7.3.6",
+    "npm:@preact/signals@^2.5.1": "2.9.2_preact@10.29.7__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.7",
+    "npm:@preact/signals@^2.9.2": "2.9.2_preact@10.29.7__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.7",
+    "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.7__preact-render-to-string@6.7.0_vite@7.3.6_preact-render-to-string@6.7.0__preact@10.29.7",
     "npm:@remix-run/node-fetch-server@0.12": "0.12.0",
     "npm:@tailwindcss/vite@^4.3.2": "4.3.2_vite@7.3.6",
     "npm:@types/babel__core@^7.20.5": "7.20.5",
     "npm:esbuild-wasm@~0.25.11": "0.25.12",
     "npm:esbuild@0.25.7": "0.25.7",
     "npm:esbuild@~0.25.5": "0.25.7",
-    "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.3",
-    "npm:preact@^10.28.2": "10.29.3",
-    "npm:preact@^10.29.1": "10.29.3",
-    "npm:preact@^10.29.3": "10.29.3",
+    "npm:preact-render-to-string@^6.6.3": "6.7.0_preact@10.29.7",
+    "npm:preact@^10.28.2": "10.29.7_preact-render-to-string@6.7.0",
+    "npm:preact@^10.29.1": "10.29.7_preact-render-to-string@6.7.0",
+    "npm:preact@^10.29.7": "10.29.7_preact-render-to-string@6.7.0",
     "npm:rollup@^4.55.1": "4.60.2",
     "npm:tailwindcss@4.3.2": "4.3.2",
     "npm:vite@^7.1.4": "7.3.6",
@@ -651,7 +651,7 @@
     "@preact/signals-core@1.14.3": {
       "integrity": "sha512-m0K3vnbSLC5rHs2ZVfeAMvBtT1zIyq4mxx5OlNncSgMj5Iz6W5Rn3kPrDxAC+iIKmiVe0lSl6U37t5ZkEWoVAw=="
     },
-    "@preact/signals@2.9.2_preact@10.29.3": {
+    "@preact/signals@2.9.2_preact@10.29.7__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.7": {
       "integrity": "sha512-DvFPISNMSh3vPqRwPa1tAVAHl85aDq4pTyNu1bTGfrKr64F3EOCHjdUl9aUdohKBf1v9PRGLYuGFcJpfztkdoQ==",
       "dependencies": [
         "@preact/signals-core",
@@ -661,7 +661,7 @@
     "@prefresh/babel-plugin@0.5.3": {
       "integrity": "sha512-57LX2SHs4BX2s1IwCjNzTE2OJeEepRCNf1VTEpbNcUyHfMO68eeOWGDIt4ob9aYlW6PEWZ1SuwNikuoIXANDtQ=="
     },
-    "@prefresh/core@1.5.10_preact@10.29.3": {
+    "@prefresh/core@1.5.10_preact@10.29.7__preact-render-to-string@6.7.0_preact-render-to-string@6.7.0__preact@10.29.7": {
       "integrity": "sha512-7yPTFbG56sutaFu8krp3B4a200KOFUvrtlllKWRuLjsYXo9UUucHOZRcer+gtgMkFTpv6ob8TGcTwA32bSwa1w==",
       "dependencies": [
         "preact"
@@ -670,7 +670,7 @@
     "@prefresh/utils@1.2.1": {
       "integrity": "sha512-vq/sIuN5nYfYzvyayXI4C2QkprfNaHUQ9ZX+3xLD8nL3rWyzpxOm1+K7RtMbhd+66QcaISViK7amjnheQ/4WZw=="
     },
-    "@prefresh/vite@2.4.12_preact@10.29.3_vite@7.3.6": {
+    "@prefresh/vite@2.4.12_preact@10.29.7__preact-render-to-string@6.7.0_vite@7.3.6_preact-render-to-string@6.7.0__preact@10.29.7": {
       "integrity": "sha512-FY1fzXpUjiuosznMV0YM7XAOPZjB5FIdWS0W24+XnlxYkt9hNAwwsiKYn+cuTEoMtD/ZVazS5QVssBr9YhpCQA==",
       "dependencies": [
         "@babel/core",
@@ -1210,14 +1210,20 @@
         "source-map-js"
       ]
     },
-    "preact-render-to-string@6.7.0_preact@10.29.3": {
+    "preact-render-to-string@6.7.0_preact@10.29.7": {
       "integrity": "sha512-Z4WR8fmLMRpdYqJ9i7vrlXSsSrxVJydwrkEXHapexfARbWfGb7vGcnvNQnIzN0cXciMVOlz/XLoiMCi9gUsy9Q==",
       "dependencies": [
         "preact"
       ]
     },
-    "preact@10.29.3": {
-      "integrity": "sha512-D9NL1GAnJZhc3RndVs4gDdxEeU9TcHgywMrhhOsnpdlvFjdbx0gAsLUnH6JEhlJH5giL7Tx5biWPUSEXE/HPzw=="
+    "preact@10.29.7_preact-render-to-string@6.7.0": {
+      "integrity": "sha512-DCHYrK/B10yUD3ZjLfhZ3WIE/9Vf9VFUODcRE2dRomTYDpJk6z6L9wecSfhfE6M9ZTHUdyQkoC46arIDhEV84Q==",
+      "dependencies": [
+        "preact-render-to-string"
+      ],
+      "optionalPeers": [
+        "preact-render-to-string"
+      ]
     },
     "rollup@4.60.2": {
       "integrity": "sha512-J9qZyW++QK/09NyN/zeO0dG/1GdGfyp9lV8ajHnRVLfo/uFsbji5mHnDgn/qYdUHyCkM2N+8VyspgZclfAh0eQ==",
@@ -1308,7 +1314,7 @@
       "jsr:@fresh/plugin-vite@^1.1.2",
       "npm:@preact/signals@^2.9.2",
       "npm:@tailwindcss/vite@^4.3.2",
-      "npm:preact@^10.29.3",
+      "npm:preact@^10.29.7",
       "npm:tailwindcss@4.3.2",
       "npm:vite@^7.3.3"
     ]
