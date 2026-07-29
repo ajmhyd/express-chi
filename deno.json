@@ -7,10 +7,10 @@
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "imports": {
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.1.2",
-    "@preact/signals": "npm:@preact/signals@^2.9.2",
-    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.2",
+    "@preact/signals": "npm:@preact/signals@^2.10.0",
+    "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.3.3",
     "preact": "npm:preact@^10.29.7",
-    "tailwindcss": "npm:tailwindcss@4.3.2",
+    "tailwindcss": "npm:tailwindcss@4.3.3",
     "fresh": "jsr:@fresh/core@^2.3.3",
     "vite": "npm:vite@^7.3.3"
   },
