@@ -44,6 +44,7 @@ This will watch the project directory and restart as necessary.
 ## Contributors
 
 - [Albert Portnoy](https://github.com/asportnoy)
+- [Maxwell Cohen](https://github.com/MaxwellCohen)
 
 ## License
 

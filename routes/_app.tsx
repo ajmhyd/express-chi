@@ -21,6 +21,9 @@ export default function App({ Component }: PageProps) {
           content="Up-to-date traffic information for the Chicago Kennedy Express Lanes, including real-time congestion levels, travel times, and speeds."
         />
         <link rel="icon" href={asset("/favicon.ico")} />
+        <link rel="icon" href={asset("/favicon.svg")} type="image/svg+xml" />
+        <link rel="apple-touch-icon" href={asset("/apple-touch-icon.png")} />
+        <link rel="manifest" href={asset("/manifest.webmanifest")} />
         <link rel="dns-prefetch" href="https://www.sigalert.com" />
         <link rel="dns-prefetch" href="https://travelmidwest.com" />
         <script dangerouslySetInnerHTML={{ __html: code }}></script>
