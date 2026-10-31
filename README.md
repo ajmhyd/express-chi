@@ -11,7 +11,7 @@ View the status of the Chicago Kennedy express lanes
 ## Usage
 
 Make sure to install Deno:
-<https://deno.land/manual/getting_started/installation>
+<https://docs.deno.com/runtime/getting_started/installation/>
 
 Then start the project:
 
@@ -19,14 +19,28 @@ Then start the project:
 deno task dev
 ```
 
-This will watch the project directory and restart as necessary.
+This starts the Vite dev server and reloads as you edit.
+
+Build and preview the production app:
+
+```
+deno task build
+deno task preview
+```
+
+## Data
+
+Direction comes from [Sigalert](https://www.sigalert.com/). Travel time, speed,
+and congestion come from [Travel Midwest](https://travelmidwest.com/) (IDOT).
+When IDOT is not reporting a live express-lane time, the page shows the typical
+time for this time of week instead.
 
 ## Built With
 
 - [Deno](https://deno.land) - The easiest, most secure JavaScript runtime.
 - [Typescript](https://www.typescriptlang.org/) - JavaScript with syntax for
   types.
-- [Fresh](https://fresh.deno.dev) - The next-get web framework.
+- [Fresh](https://fresh.deno.dev) - The next-gen web framework.
 - [Preact](https://preactjs.com) - Fast 3kB alternative to React with the same
   modern API
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for
@@ -36,6 +50,7 @@ This will watch the project directory and restart as necessary.
   zero config, worldwide.
 - [IDOT](https://idot.illinois.gov/) - Gateway traffic information courtesy of
   the Illinois Department of Transportation
+- [Sigalert](https://www.sigalert.com/) - Express lane direction
 
 ## Authors
 
