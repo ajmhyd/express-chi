@@ -31,8 +31,8 @@
     "npm:@babel/core@^7.28.0": "7.29.7",
     "npm:@babel/preset-react@^7.27.1": "7.29.7_@babel+core@7.29.7",
     "npm:@opentelemetry/api@^1.9.0": "1.9.1",
-    "npm:@preact/signals@^2.11.2": "2.11.2_preact@10.29.8_preact-render-to-string@6.7.0",
-    "npm:@preact/signals@^2.5.1": "2.11.2_preact@10.29.8_preact-render-to-string@6.7.0",
+    "npm:@preact/signals@^2.11.4": "2.11.4_preact@10.29.8",
+    "npm:@preact/signals@^2.5.1": "2.11.4_preact@10.29.8",
     "npm:@prefresh/vite@^2.4.8": "2.4.12_preact@10.29.8_vite@7.3.6_preact-render-to-string@6.7.0",
     "npm:@remix-run/node-fetch-server@0.12": "0.12.0",
     "npm:@tailwindcss/vite@^4.3.3": "4.3.3_vite@7.3.6",
@@ -782,11 +782,11 @@
     "@opentelemetry/api@1.9.1": {
       "integrity": "sha512-gLyJlPHPZYdAk1JENA9LeHejZe1Ti77/pTeFm/nMXmQH/HFZlcS/O2XJB+L8fkbrNSqhdtlvjBVjxwUYanNH5Q=="
     },
-    "@preact/signals-core@1.14.4": {
-      "integrity": "sha512-HNB6HYeYKhQbJ1aKl+YRjrS4+QWHLKX6qKoUsfS/m0vqzsVaEBiZiaKbG/e+NKk2ch5ALQr/ihWaMHxiCuuWHA=="
+    "@preact/signals-core@1.14.5": {
+      "integrity": "sha512-vcRv7Ityz5JVmeiVqIluLFzT/PDS/AlhHUpw3/aUWqcVUs6bDGIPXE/6RSC4evBNWYvnniozg5Syfj33al3gkg=="
     },
-    "@preact/signals@2.11.2_preact@10.29.8_preact-render-to-string@6.7.0": {
-      "integrity": "sha512-rVTRTt/T0HIRgbugwS5FigbfF/kfdEFYFtiqxa+lbpqTajepqnR0firuAS2iNdHyejWB7Yc9p9QePkVNBtTAwg==",
+    "@preact/signals@2.11.4_preact@10.29.8": {
+      "integrity": "sha512-Rb+5RPo9gWSaHtzJeauhHxiC8KP/IF2DEPkHPEOGOnuy2wnJzRqyeLRankUCYd6ADqtxS6GnWGv6Ie343d8aYw==",
       "dependencies": [
         "@preact/signals-core",
         "preact"
@@ -1480,7 +1480,7 @@
     "dependencies": [
       "jsr:@fresh/core@^2.3.3",
       "jsr:@fresh/plugin-vite@^1.1.2",
-      "npm:@preact/signals@^2.11.2",
+      "npm:@preact/signals@^2.11.4",
       "npm:@tailwindcss/vite@^4.3.3",
       "npm:preact@^10.29.8",
       "npm:tailwindcss@4.3.3",
