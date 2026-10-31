@@ -1,6 +1,6 @@
 import { Direction, ExpressData } from "../types.ts";
 import getSigAlertData from "./sigalert.ts";
-import getTravelMidwestData from "./travelmidwest.ts";
+import { fetchTravelMidwest, parseTravelMidwest } from "./travelmidwest.ts";
 
 const TIMEOUT_MS = 3_000;
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
@@ -30,10 +30,22 @@ export async function getData(): Promise<ExpressData> {
     return cached.data;
   }
 
-  const [sigAlertData, travelMidwestData] = await Promise.all([
+  const [sigAlertData, travelMidwestRaw] = await Promise.all([
     getSigAlertData(), // This has more accurate direction determination
-    getTravelMidwestData(), // This has more data
+    fetchTravelMidwest(), // This has more data
   ]);
+
+  // Reversible-lane detectors often report Unknown while the lanes are open.
+  // Parse with SigAlert's direction so a historical average and local speed
+  // are not discarded along with the missing live travel time.
+  const knownDirection = sigAlertData?.direction === Direction.Inbound ||
+      sigAlertData?.direction === Direction.Outbound
+    ? sigAlertData.direction
+    : undefined;
+  const travelMidwestData = parseTravelMidwest(
+    travelMidwestRaw,
+    knownDirection,
+  );
 
   let result: ExpressData;
   if (

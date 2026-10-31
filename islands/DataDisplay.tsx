@@ -158,18 +158,12 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
                           Data unavailable
                         </span>
                       )}
-                    {travelTime !== null && travelTime !== undefined && (
+                    {averageTravelTime !== null &&
+                      averageTravelTime !== undefined && (
                       <span className="ml-2 text-sm font-medium text-gray-500">
-                        {averageTravelTime !== null &&
-                            averageTravelTime !== undefined
-                          ? (
-                            `${averageTravelTime.toLocaleString()} min avg`
-                          )
-                          : (
-                            <span className="text-gray-700 italic text-lg">
-                              Data unavailable
-                            </span>
-                          )}
+                        {travelTime !== null && travelTime !== undefined
+                          ? `${averageTravelTime.toLocaleString()} min avg`
+                          : `typically ${averageTravelTime.toLocaleString()} min`}
                       </span>
                     )}
                   </div>
@@ -186,7 +180,7 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
                   Speed
                 </dt>
                 <dd className="mt-1 flex flex-col items-baseline lg:flex-row gap-2">
-                  <div className="flex text-2xl font-semibold">
+                  <div className="flex items-baseline text-2xl font-semibold">
                     {speed !== null && speed !== undefined
                       ? (
                         <span className="text-blue-600 dark:text-blue-300">
@@ -198,6 +192,12 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
                           Data unavailable
                         </span>
                       )}
+                    {(speed === null || speed === undefined) &&
+                      localSpd !== null && localSpd !== undefined && (
+                      <span className="ml-2 text-sm font-medium text-gray-500">
+                        local {localSpd.toLocaleString()} MPH
+                      </span>
+                    )}
                   </div>
                   <div className="flex flex-row flex-wrap items-center lg:justify-end gap-2">
                     <Congestion level={level ?? null} />
@@ -213,8 +213,11 @@ export default function DataDisplay({ initialData }: DataDisplayProps) {
               <div className="mt-4 px-4 py-3 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-600">
                 <p className="text-sm text-yellow-700 dark:text-yellow-300">
                   <span className="font-semibold">Note:</span>{" "}
-                  Express lanes may be closed or data is temporarily
-                  unavailable. Please check back later.
+                  IDOT is not currently reporting express lane travel time or
+                  speed.
+                  {averageTravelTime != null
+                    ? " A typical time for this time of week is shown instead."
+                    : " Please check back later."}
                 </p>
               </div>
             )}
